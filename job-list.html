@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title> Jobs list</title>
+  </head>
+  <body>
+    
+    <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="dash.html">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="employee-list.html">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="job-list.html">Jobs</a>
+        </li>
+        </ul>
+        
+      <form class="d-flex">
+        <div class="input-group">
+            <input type="search" class="form-control form-control-sm" placeholder="Search here" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-success btn-sm" type="button" id="button-addon2"> <i class="fa fa-search"></i></button>
+          </div>
+      </form>
+      <a href="index.html" class="ml-3 btn btn-sm btn-warning">Log Out</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- dashboard contents-->
+<div class="container fluid">
+  <div class="row mt-4">
+    <div class="col-lg-3 col-md-3">
+      <div class="list-group small">
+        <div class="list-group-item active"> Jobs Data</div>
+        <a href="#" class="list-group-item" data-toggle="modal" data-target="#add_job">Add New Job</a>
+        <a href="job-list.html" class="list-group-item">View all Jobs</a>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-9">
+      <table class="table bg-light">
+        <tr class="table-dark small">
+          <td>ID</td>
+          <td>Job Name</td>
+          <td>Details</td>
+          <td>Edit</td>
+          <td>Delete</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Graphic Designer</td>
+          <td><a href="#" data-toggle="modal" data-target="#job_details1" class="btn btn-sm btn-block btn-info">Details</td>
+          <td><a href="#" data-toggle="modal" data-target="#job_edit_details" class="btn btn-sm btn-block btn-warning">Edit</td>
+          <td><a href="#" class="btn btn-sm btn-block btn-danger" onclick="confirm('Delete this Job? ');">Delete</td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td>Web Designer</td>
+          <td><a href="#" data-toggle="modal" data-target="#job_details2" class="btn btn-sm btn-block btn-info">Details</td>
+          <td><a href="#" data-toggle="modal" data-target="#job_edit_details" class="btn btn-sm btn-block btn-warning">Edit</td>
+            <td><a href="#" class="btn btn-sm btn-block btn-danger" onclick="confirm('Delete this Job? ');">Delete</td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td>Web Developer</td>
+          <td><a href="#" data-toggle="modal" data-target="#job_details3" class="btn btn-sm btn-block btn-info">Details</td>
+          <td><a href="#" data-toggle="modal" data-target="#job_edit_details" class="btn btn-sm btn-block btn-warning">Edit</td>
+            <td><a href="#" class="btn btn-sm btn-block btn-danger" onclick="confirm('Delete this Job? ');">Delete</td>
+        </tr>
+      </table>
+    </div>
+ </div>
+</div>
+
+
+<!-- Add Job Modal -->
+<div class="modal fade" id="add_job" tabindex="-1" aria-labelledby="add_job" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Job Details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <input type="date" class="form-control form-control-sm" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control form-control-sm" placeholder="Job Name" required>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-success btn-sm btn-block">Add New Job</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Job Details Modal-->
+<div class="modal fade" id="job_details1" tabindex="-1" aria-labelledby="job_details1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <table class="table table-bordered">
+        <tr>
+          <th>ID</th>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Job Added Date</th>
+          <td>7 July 2020</td>
+        </tr>
+        <tr>
+          <th>Job Name</th>
+          <td>Graphic Designer</td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="job_details2" tabindex="-1" aria-labelledby="job_details2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <table class="table table-bordered">
+        <tr>
+          <th>ID</th>
+          <td>2</td>
+        </tr>
+        <tr>
+          <th>Job Added Date</th>
+          <td>7 July 2020</td>
+        </tr>
+        <tr>
+          <th>Job Name</th>
+          <td>Web Designer</td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="job_details3" tabindex="-1" aria-labelledby="job_details3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <table class="table table-bordered">
+        <tr>
+          <th>ID</th>
+          <td>3</td>
+        </tr>
+        <tr>
+          <th>Job Added Date</th>
+          <td>7 July 2020</td>
+        </tr>
+        <tr>
+          <th>Job Name</th>
+          <td>Web Developer</td>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Job Details -->
+<div class="modal fade" id="job_edit_details" tabindex="-1" aria-labelledby="job_edit_details" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Job Details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <input type="date" class="form-control form-control-sm" placeholder="Job Added Date" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control form-control-sm" placeholder="Job Name" required>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-success btn-sm btn-block">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
